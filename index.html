@@ -14,19 +14,22 @@
     
     <h1>Testing 123</h1>
     
-    git remote add origin git@github.com:doug-g/bootstrap.git
+   
     
     <form action="#">
+    <div id="divy"> </div>
     	<ul>
 			<li>
 				<label for="name">Name: </label>
-	 			<input name="name" id="name">
+	 			<input name="name" id="mynum">
 			</li>
 			<li>
-				<input type="submit" value="Submit">
+				<input id = "btn" type="submit" value="Submit">
 			</li>
 		</ul>
+        
 	</form>
+    <div id="divy"> </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     
@@ -34,13 +37,16 @@
     
     
     (function(){
-      var num = 1578;
-      for(var n = 1; n < (num / 2); n++){
-        var res = num / n;
-        if (res === Math.round(res)){
-          document.write("<p>" + res + "</p>");
-        }
-      }
+        $('#btn').on('click',function(){
+            var num = $('#mynum').val();
+            for(var n = 1; n < (num / 2); n++){
+                var res = num / n;
+                if (res === Math.round(res)){
+                    $('#divy').append("<p>" + res + "</p>");
+                }
+                    
+            }
+        });
     })();
     </script>
 
